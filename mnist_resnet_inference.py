@@ -1,19 +1,3 @@
-"""Step 7: Run inference on MNIST with a pretrained ResNet from HuggingFace.
-
-The model (microsoft/resnet-18) is pretrained on ImageNet (1000 classes),
-not MNIST, so the accuracy is expected to be bad. MNIST images are 28x28
-grayscale, so they are converted to RGB and resized to 224x224 to fit the
-model's input size.
-
-Usage:
-    python mnist_resnet_inference.py [--num-samples N]
-
-If huggingface.co is unreachable, use a mirror:
-    HF_ENDPOINT=https://hf-mirror.com python mnist_resnet_inference.py
-
-Model weights are downloaded to the HuggingFace cache (~/.cache/huggingface),
-the MNIST dataset to ./data/ -- neither is committed to git (see .gitignore).
-"""
 
 import argparse
 
@@ -75,7 +59,6 @@ def main():
     accuracy = correct / num
     print(f"\nEvaluated {num} samples")
     print(f"Accuracy: {accuracy:.4f} ({correct}/{num})")
-    print("(Low accuracy is expected: ResNet is pretrained on ImageNet, not MNIST.)")
 
 
 if __name__ == "__main__":
