@@ -1,0 +1,7 @@
+# MNIST dataset and any model weights must not be committed
+data/
+*.pt
+*.pth
+*.bin
+*.safetensors
+__pycache__/
